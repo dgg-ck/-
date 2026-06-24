@@ -1,39 +1,25 @@
 #pragma once
 #include<iostream>
 
+const int BUFF_SIZE = 256;
+
 class sqStack
 {
+private:
+    char* pBottom;   // 栈底指针
+    char* pTop;      // 栈顶指针（指向下一个可用位置）
+    int iCapacity;   // 栈容量
+    int iNum;        // 栈中元素个数
+
 public:
-	//栈顶指针
-	int* pTop;
-	//栈底指针
-	int* pBottom;
-	//容量
-	int iCapacity;
-	//数量
-	int iNum;
+    sqStack(int capacity);
+    ~sqStack();
 
-	sqStack(int capacity);
-	~sqStack();
+    bool IsEmpty() const { return iNum == 0; }
+    bool IsFull() const { return iNum == iCapacity; }
 
-	//出栈
-	int sqStackPop();
-	//入栈
-	void sqStackEnter(int num);
-	//输出栈中元素
-	void sqStackShow();
-
-	//判断空栈，满栈
-	//[this]()->bool {return iNum == (iCapacity - 1) ? true : false; };
-	//[this]()->bool {return iNum == -1 ? true : false };
-	//判断空栈,满栈,内联
-	bool IsFull()
-	{
-		return iNum == (iCapacity - 1) ? true : false;
-	}
-	bool IsEmpty()
-	{
-		return iNum == -1 ? true : false;
-	}
-
+    void sqStackEnter(char num);   // 入栈
+    int sqStackPop();              // 出栈（返回 -1 表示空栈）
+    char sqStackGetTop() const;    // 获取栈顶元素（不出栈）
+    void sqStackShow() const;      // 显示栈内容
 };

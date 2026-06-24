@@ -1,81 +1,73 @@
 #include"sqStack.h"
 
-//构造函数
+// 构造函数
 sqStack::sqStack(int capacity)
 {
-	//开辟容量并且初始化为0
-	pBottom = new int[capacity]();
-	pTop = pBottom - 1;
-	iCapacity = capacity;
-	//-1代表栈中无元素 空栈
-	iNum = -1;
+    pBottom = new char[capacity]();
+    pTop = pBottom;      // 初始指向栈底
+    iCapacity = capacity;
+    iNum = 0;            // 0 表示空栈
 }
 
-//析构函数
+// 析构函数
 sqStack::~sqStack()
 {
-	delete[] pBottom;
-	pTop = nullptr;
-	pBottom = nullptr;
-	iCapacity = 0;
-	iNum = 0;
+    delete[] pBottom;
+    pTop = nullptr;
+    pBottom = nullptr;
+    iCapacity = 0;
+    iNum = 0;
 }
 
-//出栈
+// 入栈
+void sqStack::sqStackEnter(char num)
+{
+    if (IsFull())
+    {
+        std::cout << "栈已满，无法入栈" << std::endl;
+        return;
+    }
+    *pTop = num;    // 先赋值
+    pTop++;         // 再移动
+    iNum++;
+}
+
+// 出栈
 int sqStack::sqStackPop()
 {
-	if (IsEmpty())
-	{
-		std::cout << "栈已空，无法出栈" << std::endl;
-		return -1;
-	}
-	else
-	{
-		int iTmp = 0;
-		//获取出栈值
-		iTmp = *pTop;
-		//栈顶指针下移
-		pTop--;
-		//栈数量减少
-		iNum--;
-
-		return iTmp;
-	}
-}
-//入栈
-void sqStack::sqStackEnter(int num)
-{
-	if (IsFull())
-	{
-		std::cout << "栈已满，无法入栈" << std::endl;
-	}
-	else
-	{
-		//栈顶指针往上走，然后入栈
-		++pTop;
-		*pTop = num;
-		iNum++;
-	}
-
+    if (IsEmpty())
+    {
+        std::cout << "栈已空，无法出栈" << std::endl;
+        return -1;
+    }
+    pTop--;          // 先下移
+    char ch = *pTop; // 再取值
+    iNum--;
+    return ch;
 }
 
-void sqStack::sqStackShow()
+// 获取栈顶元素（不出栈）
+char sqStack::sqStackGetTop() const
 {
-	if (IsEmpty())
-	{
-		std::cout << "栈已空，无法输出信息" << std::endl;
-	}
-	else
-	{
-		int iTmp = iNum;
-		int* pTmp = pTop;
+    if (IsEmpty())
+        return '\0';
+    return *(pTop - 1);  // pTop 指向下一个可用位置，栈顶在 pTop-1
+}
 
-		std::cout << "栈数据:";
-		while (iTmp != -1)
-		{
-			std::cout << *pTmp-- << " ";
-			iTmp--;
-		}
-	}
-
+// 显示栈内容（从栈顶到栈底）
+void sqStack::sqStackShow() const
+{
+    if (IsEmpty())
+    {
+        std::cout << "栈已空，无法输出信息" << std::endl;
+        return;
+    }
+    char* pTmp = pTop - 1;
+    std::cout << "栈数据:";
+    while (pTmp >= pBottom)
+    {
+        std::cout << *pTmp << " ";
+        pTmp--;
+    }
+    std::cout << std::endl;
 }
