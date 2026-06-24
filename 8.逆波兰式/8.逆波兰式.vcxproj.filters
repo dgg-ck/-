@@ -21,5 +21,16 @@
     <ClCompile Include="sqStack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="rpn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sqStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rpn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

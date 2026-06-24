@@ -20,7 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="rpn.cpp" />
     <ClCompile Include="sqStack.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rpn.h" />
+    <ClInclude Include="sqStack.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
