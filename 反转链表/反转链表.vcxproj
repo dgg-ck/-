@@ -139,13 +139,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\1.单链表\main.cpp" />
-    <ClCompile Include="..\1.单链表\SingleLinkList.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\1.单链表\SingleLinkList.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

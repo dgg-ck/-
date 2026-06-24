@@ -1,34 +1,37 @@
-//单链表
+#include"SingleLinkList.h"
 #include<iostream>
-#include"LinkStack.h"
+
+
 
 int main()
 {
-	//创建链表入口
-	LinkStack* pStack = new LinkStack;
-	//链表和头节点同时初始化
-	LinkStackInit(*pStack);
+	//创建链表
+	pSLinkList pList = new SLinkList;
 
-	//先创建五个头结点
-	for (int i = 1; i <= 5; i++)
+	//创建结点
+	for (int i = 0; i < 5; i++)
 	{
-		LinkStackEnter(*pStack, *(new Node(i)));
+		pNode pNewNode = new Node(i);
+		//TailInsert(pList, pNewNode);
+		HeadInsert(pList, pNewNode);
 	}
 
-	//std::cout << pStack->pBottom->iData << std::endl;
-	//出栈
-	LinkStackPop(*pStack);
-	LinkStackPop(*pStack);
-	LinkStackPop(*pStack);
-	LinkStackPop(*pStack);
-	LinkStackPop(*pStack);
-	//信息输出
-	ShowLinkStack(pStack->pBottom);
+	//尾删
+	//TailDelete(pList);
+	//TailDelete(pList);
+	//TailDelete(pList);
+	//TailDelete(pList);
+	//TailDelete(pList);
 
+	//头删
+	HeadDelete(pList);
+	HeadDelete(pList);
+	HeadDelete(pList);
+	HeadDelete(pList);
+	HeadDelete(pList);
 
-	
-
-	//LinkStackDestory(*pStack);
+	//输出链表信息
+	ShowList(pList);
 
 	return 0;
 }
