@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CycleDoubleLinkList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CycleDoubleLinkList.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,13 +145,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\循环双链表\CycleDoubleLinkList.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\循环双链表\CycleDoubleLinkList.cpp" />
-    <ClCompile Include="..\循环双链表\main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
