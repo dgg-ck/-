@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<stack>
+#include<queue>
 
 
 template<class T>
@@ -133,7 +134,6 @@ public:
 		
 
 	}
-
 	//层次遍历 ---广度搜索 BFS
 	void LevelOrder(pTreeNode<T> node)
 	{
@@ -175,6 +175,8 @@ public:
 
 
 	}
+
+
 
 	//根结点指针
 	pTreeNode<T> m_pRoot;
