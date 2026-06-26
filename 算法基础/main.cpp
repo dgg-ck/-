@@ -32,7 +32,7 @@ int main()
 	clock_t cEnd;
 	cStart = clock(); //计算的是CPU的滴答数，需要通过计算才能得出时间
 	// 多次执行阶乘，让CPU耗时超过1ms
-	for (int i = 0; i < 100000; i++)
+	for (int i = 0; i < 10000000; i++)
 	{
 		llResult = Factorial(20);
 	}
@@ -46,7 +46,7 @@ int main()
 	DWORD dStart;
 	DWORD dEnd;
 	dStart = GetTickCount();
-	for (int i = 0; i < 100000; i++)
+	for (int i = 0; i < 10000000; i++)
 	{
 		llResult = Factorial(20);
 	}
@@ -63,7 +63,7 @@ int main()
 	QueryPerformanceFrequency(&ltHardwareCount);
 	//QueryPerformanceCounter(&cnt)：获取当前硬件计数器数值
 	QueryPerformanceCounter(&ltStart);
-	for (int i = 0; i < 100000; i++)
+	for (int i = 0; i < 10000000; i++)
 	{
 		llResult = Factorial(20);
 	}
@@ -80,7 +80,7 @@ int main()
 
 	//steady_clock
 	auto scStart = std::chrono::steady_clock::now();
-	for (int i = 0; i < 100000; i++)
+	for (int i = 0; i < 10000000; i++)
 	{
 		llResult = Factorial(20);
 	}
@@ -88,7 +88,7 @@ int main()
 
 	//转时间
 	auto scUs = std::chrono::duration_cast<std::chrono::nanoseconds>(scEnd - scStart);
-	std::cout << "阶乘结果：" << llResult << "时间:" << scUs << std::endl;
+	std::cout << "阶乘结果：" << llResult << "时间:" << scUs.count() << std::endl;
 
 
 
