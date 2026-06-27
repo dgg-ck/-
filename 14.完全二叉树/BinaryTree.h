@@ -177,6 +177,44 @@ public:
 	}
 
 
+	// 完全二叉树插入
+	void CompleteInsert(const T& e)
+	{
+		pTreeNode<T> pNewNode = new TreeNode<T>(e);  // 创建新节点
+
+		if (m_pRoot == nullptr) {
+			m_pRoot = pNewNode;
+			return;
+		}
+
+		std::queue<pTreeNode<T>> q;
+		q.push(m_pRoot);
+
+		while (!q.empty()) {
+			pTreeNode<T> pCur = q.front();
+			q.pop();
+
+			// 检查左孩子
+			if (pCur->m_pLeftChild == nullptr) {
+				pCur->m_pLeftChild = pNewNode;
+				return;
+			}
+			else {
+				q.push(pCur->m_pLeftChild);
+			}
+
+			// 检查右孩子
+			if (pCur->m_pRightChild == nullptr) {
+				pCur->m_pRightChild = pNewNode;
+				return;
+			}
+			else {
+				q.push(pCur->m_pRightChild);
+			}
+		}
+	}
+
+
 
 	//根结点指针
 	pTreeNode<T> m_pRoot;

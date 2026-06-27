@@ -6,17 +6,27 @@ int main()
 	BinaryTree<char>* pBT = new BinaryTree<char>('Z');
 
 	//先创建一堆结点
-	pTreeNode<char> A = pBT->TreeNodeCreate('A');
-	pTreeNode<char> B = pBT->TreeNodeCreate('B');
-	pTreeNode<char> C = pBT->TreeNodeCreate('C');
-	pTreeNode<char> D = pBT->TreeNodeCreate('D');
-	pTreeNode<char> E = pBT->TreeNodeCreate('E');
-	pTreeNode<char> F = pBT->TreeNodeCreate('F');
+	//pTreeNode<char> A = pBT->TreeNodeCreate('A');
+	//pTreeNode<char> B = pBT->TreeNodeCreate('B');
+	//pTreeNode<char> C = pBT->TreeNodeCreate('C');
+	//pTreeNode<char> D = pBT->TreeNodeCreate('D');
+	//pTreeNode<char> E = pBT->TreeNodeCreate('E');
+	//pTreeNode<char> F = pBT->TreeNodeCreate('F');
 
 	//傻瓜链接
-	pBT->TreeNodeInsert(pBT->m_pRoot, A, B);
+	/*pBT->TreeNodeInsert(pBT->m_pRoot, A, B);
 	pBT->TreeNodeInsert(A, C, D);
-	pBT->TreeNodeInsert(B, E,F);
+	pBT->TreeNodeInsert(B, E,F);*/
+
+	//完全二叉树链接
+	pBT->CompleteInsert('A');
+	pBT->CompleteInsert('B');
+
+	pBT->CompleteInsert('C');
+	pBT->CompleteInsert('D');
+	pBT->CompleteInsert('E');
+	pBT->CompleteInsert('F');
+	pBT->CompleteInsert('G');
 
 	//先序遍历
 	std::cout << "先序遍历:";
