@@ -251,4 +251,25 @@ public:
 
 	}
 
+	//优先队列
+	void MinPriorityQueue()
+	{
+		//要求为小根堆
+		if (m_iHeapSize == 0)
+		{
+			std::cout << "空堆，无法输出" << std::endl;
+			return;
+		}
+
+		//输出
+		for (int i = 1; i <= m_iHeapSize; i++)
+		{
+			std::cout << "[" << i << "] ";
+			std::cout << m_pHeap[i] << " " ;
+			BuildMinHeap();
+		}
+
+	}
+
+
 };

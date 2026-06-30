@@ -13,36 +13,30 @@ int main()
 	//pHeap->MaxHeapInsert(7);
 	//pHeap->MaxHeapInsert(8);
 
-	pHeap->MinHeapInsert(8);
-	pHeap->MinHeapInsert(7);
-	pHeap->MinHeapInsert(6);
+	pHeap->MinHeapInsert(23);
 	pHeap->MinHeapInsert(5);
-	pHeap->MinHeapInsert(4);
-	pHeap->MinHeapInsert(3);
-	pHeap->MinHeapInsert(2);
+	pHeap->MinHeapInsert(67);
+	pHeap->MinHeapInsert(12);
+	pHeap->MinHeapInsert(89);
+	pHeap->MinHeapInsert(34);
+	pHeap->MinHeapInsert(55);
 	pHeap->MinHeapInsert(1);
+	pHeap->MinHeapInsert(99);
+	pHeap->MinHeapInsert(46);
 	for (int i = 1; i <= pHeap->m_iHeapSize; i++)
 	{
 		std::cout << pHeap->m_pHeap[i] << " ";
 	}
 	std::cout<<std::endl;
 
-	pHeap->MinHeapDelete();
-	pHeap->MinHeapDelete();
-	pHeap->MinHeapDelete();
-	pHeap->MinHeapDelete();
-	pHeap->MinHeapDelete();
-	pHeap->MinHeapDelete();
-	pHeap->MinHeapDelete();
-	pHeap->MinHeapDelete();
-	//pHeap->MinHeapDelete();
+	//输出大小
+	std::cout << "大小:" << pHeap->m_iHeapSize << std::endl;
+	
+	//优先队列 小根堆先出
+	pHeap->MinPriorityQueue();
 
 
-
-	for (int i = 1; i <= pHeap->m_iHeapSize; i++)
-	{
-		std::cout << pHeap->m_pHeap[i] << " ";
-	}
+	
 
 	delete pHeap;
 
