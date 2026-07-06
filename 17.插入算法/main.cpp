@@ -5,17 +5,23 @@
 //从小到大排序
 void InsertSort(int* arr, int n)
 {
-	int iTmp = 0;
+	
 	for (int i = 1; i < n; i++)
 	{
-		for (int j = i; j >= 1; j--)
+		for (int j = i; j >= 1 && arr[j] > arr[j - 1]; j--)
 		{
-			if (arr[j] < arr[j - 1])
+			if (arr[j] > arr[j - 1])
 			{
-				iTmp = arr[j];
+				int iMid = arr[j];
 				arr[j] = arr[j - 1];
-				arr[j - 1] = iTmp;
+				arr[j - 1] = iMid;
 			}
+			//因为插入排序默认前面都是有序的
+			else
+			{
+				break;
+			}
+
 		}
 	}
 

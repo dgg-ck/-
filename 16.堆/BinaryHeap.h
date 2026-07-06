@@ -17,9 +17,10 @@ public:
 	
 	BinaryHeap() :m_iHeapSize(0)
 	{
+		//保留多一个数组空间
 		m_pHeap = new T[HEAPMAX + 1];
 	}
-
+	//析构
 	~BinaryHeap()
 	{
 		delete[] m_pHeap;
